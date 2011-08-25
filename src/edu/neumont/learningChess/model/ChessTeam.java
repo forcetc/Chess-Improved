@@ -10,17 +10,28 @@ public class ChessTeam {
 	List<ChessPiece> unusedChessPieces;
 	List<ChessPiece> usedChessPieces;
 
-	@SuppressWarnings("unused")
 	public ChessPiece getUnusedPiece(PieceType type) {
-		for (ChessPiece piece : unusedChessPieces) {
-			
+		ChessPiece piece = null;
+		for (int i = 0; i <unusedChessPieces.size() && piece == null;i++ ) {
+			ChessPiece chessPiece = unusedChessPieces.get(i);
+			if(chessPiece.getType() == type)
+			{
+				piece = chessPiece;
+			}
 		}
-		return null;
+		return piece;
 	}
 
 	public ChessPiece getUsedPiece(PieceType type) {
-		//TODO make method body
-		return null;
+		ChessPiece piece = null;
+		for (int i = 0; i <usedChessPieces.size() && piece == null;i++ ) {
+			ChessPiece chessPiece = usedChessPieces.get(i);
+			if(chessPiece.getType() == type)
+			{
+				piece = chessPiece;
+			}
+		}
+		return piece;
 	}
 
 }
