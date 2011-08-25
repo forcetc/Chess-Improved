@@ -1,9 +1,13 @@
 package edu.neumont.learningChess.api;
 
 import java.util.Enumeration;
+
+import org.ietf.jgss.GSSContext;
+
 import edu.neumont.learningChess.model.ChessBoard;
 import edu.neumont.learningChess.model.ChessPiece;
 import edu.neumont.learningChess.model.ChessTeam;
+import edu.neumont.learningChess.model.MoveHistory;
 import edu.neumont.learningChess.api.Location;
 
 public class ChessGame {
@@ -11,7 +15,7 @@ public class ChessGame {
 	private ChessBoard board = new ChessBoard();
 	private ChessTeam lightTeam = new ChessTeam();
 	private ChessTeam darkTeam = new ChessTeam();
-
+	private MoveHistory moveHistory = new MoveHistory();
 
 	
 	public ChessGame()
@@ -20,19 +24,25 @@ public class ChessGame {
 		
 	}
 	
-	public void ChessGame(ChessGameState gameState)
+	public ChessGame(ChessGameState gameState)
 	{
-		for(int row = 0;row< board.N_ROWS;row++)
+		for(int row = 0;row< board.NUMBER_OF_ROWS;row++)
 		{
-			for(int col = 0; col< board.N_COLS; col++)
+			for(int col = 0; col< board.NUMBER_OF_COLUMNS; col++)
 			{
 				Location location = new Location(row,col);
 				PieceDescription pieceDescription = gameState.getPieceDescription(location);
+				TeamColor currentTeamColor;
 				
 				ChessPiece piece = (pieceDescription.getColor() == TeamColor.LIGHT)? 
 						lightTeam.getUnusedPiece(pieceDescription.getPieceType()) 
 						: darkTeam.getUnusedPiece(pieceDescription.getPieceType());
-				
+						
+						board.setPiece(piece, location);
+						piece.setHasMoved(true);
+						
+						currentTeamColor = gameState.getMovingTeamColor();
+						moveHistory.
 			}
 			
 		}
@@ -52,8 +62,11 @@ public class ChessGame {
 	
 	public MoveDescription getMoveDescription(Move move)
 	{
+		return null;
 		
 		//TODO: 
+		
+		return null;
 	}
 	
 	public void makeMove(MoveDescription movedesc)
