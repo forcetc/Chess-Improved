@@ -9,10 +9,12 @@ public class ChessGameState {
 	private ChessBoard chessBoard;
 	
 	public ChessGameState(ChessBoard chessBoard) {
-		
+		this.chessBoard=chessBoard;
 	}
 
 	public PieceDescription getPieceDescription(Location location) {
+		PieceDescription description = new PieceDescription(null, false, null);
+		description;
 		return null;
 	}
 
