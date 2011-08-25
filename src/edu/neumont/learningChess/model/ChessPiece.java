@@ -4,12 +4,12 @@ import java.util.*;
 
 import edu.neumont.learningChess.api.Location;
 import edu.neumont.learningChess.api.Move;
+import edu.neumont.learningChess.api.PieceType;
 
 public abstract class ChessPiece {
 
-		protected ChessTeam team;
 		protected boolean hasMoved = false;
-		protected 
+		protected PieceType type;
 
 		public ChessPiece() {
 
@@ -24,11 +24,12 @@ public abstract class ChessPiece {
 			this.hasMoved = hasMoved;
 		}
 
-	
-
-		public ChessTeam getTeam() {
-			return team;
+		public PieceType getType() {
+			return type;
 		}
+		
+
+
 
 		public abstract Enumeration<Location> getLegalMoves(ChessBoard board);
 
