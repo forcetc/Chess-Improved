@@ -30,9 +30,6 @@ public abstract class ChessPiece {
 		
 
 
-
-		public abstract Enumeration<Location> getLegalMoves(ChessBoard board);
-
 		public boolean canAttack(ChessBoard board, Location target) {
 			boolean attacks = false;
 			for (Enumeration<Location> e = getLegalMoves(board); !attacks && e.hasMoreElements(); ) {
@@ -53,7 +50,8 @@ public abstract class ChessPiece {
 		}
 		
 		
-		
+		public abstract Enumeration<Location> getLegalMoves(ChessBoard board);
+
 		//Class simple name
 		public String getName() {
 			return this.getClass().getSimpleName();
