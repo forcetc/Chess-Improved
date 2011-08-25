@@ -17,7 +17,7 @@ public class PieceDescription {
 		return teamColor;
 	}
 
-	public boolean isHasMoved() {
+	public boolean hasMoved() {
 		return hasMoved;
 	}
 	

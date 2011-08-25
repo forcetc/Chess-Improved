@@ -12,10 +12,9 @@ public class ChessTeam {
 
 	public ChessPiece getUnusedPiece(PieceType type) {
 		ChessPiece piece = null;
-		for (int i = 0; i <unusedChessPieces.size() && piece == null;i++ ) {
+		for (int i = 0; i < unusedChessPieces.size() && piece == null; i++) {
 			ChessPiece chessPiece = unusedChessPieces.get(i);
-			if(chessPiece.getType() == type)
-			{
+			if(chessPiece.getType() == type) {
 				piece = chessPiece;
 			}
 		}
@@ -24,10 +23,9 @@ public class ChessTeam {
 
 	public ChessPiece getUsedPiece(PieceType type) {
 		ChessPiece piece = null;
-		for (int i = 0; i <usedChessPieces.size() && piece == null;i++ ) {
+		for (int i = 0; i < usedChessPieces.size() && piece == null; i++) {
 			ChessPiece chessPiece = usedChessPieces.get(i);
-			if(chessPiece.getType() == type)
-			{
+			if(chessPiece.getType() == type) {
 				piece = chessPiece;
 			}
 		}

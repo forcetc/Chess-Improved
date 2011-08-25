@@ -24,7 +24,7 @@ public class ChessGameState {
 	}
 
 	public void setPieceDescription(Location location, PieceDescription pieceDescription) {
-		
+		// TODO: finish this method
 	}
 
 	public TeamColor getMovingTeamColor() {
@@ -44,10 +44,11 @@ public class ChessGameState {
 	}
 
 	public byte[] serialize() {
+		// TODO: finish this method
 		return null;
 	}
 
 	public void deserialize(byte[] buffer) {
-
+		// TODO: finish this method
 	}
 }

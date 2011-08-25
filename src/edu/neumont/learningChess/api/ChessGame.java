@@ -17,7 +17,7 @@ public class ChessGame {
 	
 	public ChessGame()
 	{
-		//TODO: 
+		// TODO: finish this method
 		
 	}
 	
@@ -43,74 +43,66 @@ public class ChessGame {
 			}
 			
 		}
-			
-		
-		//TODO: 
+		// TODO: finish this method
 		
 	}
 	
 	public ChessGameState getGameState()
 	{
-		
-		
-		//TODO: 
+		// TODO: finish this method
 		return null;
 	}
 	
 	public MoveDescription getMoveDescription(Move move)
 	{		
-		//TODO: 
-		
+		// TODO: finish this method
 		return null;
 	}
 	
 	public void makeMove(MoveDescription movedesc)
 	{
-		//TODO: 
+		// TODO: finish this method
 	}
 	
 	public void unMakeMove()
 	{
-		//TODO: 
-
+		// TODO: finish this method
 	}
 	
 	public boolean isCheck()
 	{
+		// TODO: finish this method
 		return false;
-		
 	}
 	
 	public boolean isCheckMate()
 	{
-		//TODO: 
+		// TODO: finish this method
 		return false;
 	}
 	
 	public boolean isStaleMate()
 	{
-		//TODO: 
+		// TODO: finish this method
 		return false;
 	}
 	
 	public Enumeration<Move> getPossibleMoves()
 	{
-		
-		//TODO: 
+		// TODO: finish this method
 		return null;
 	}
 	
 	public Enumeration<Move> getPossibleMoves(Location location)
 	{
-		
-		//TODO: 
+		// TODO: finish this method
 		return null;
 	} 
 	
 	public Enumeration<Move> getGameHistory()
 	{
+		// TODO: finish this method
 		return null;
-		//TODO: 
 	}
 	
 }

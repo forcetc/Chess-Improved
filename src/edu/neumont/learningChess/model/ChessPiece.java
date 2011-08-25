@@ -12,7 +12,6 @@ public abstract class ChessPiece {
 		protected PieceType type;
 
 		public ChessPiece() {
-			
 		}	
 		
 

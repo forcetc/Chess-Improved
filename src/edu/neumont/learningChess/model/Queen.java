@@ -5,15 +5,15 @@ import java.util.Enumeration;
 import edu.neumont.learningChess.api.Location;
 import edu.neumont.learningChess.api.PieceType;
 
-public class Queen extends ChessPiece{
+public class Queen extends ChessPiece {
 
-	public Queen(){
+	public Queen() {
 		type = PieceType.QUEEN;
 	}
 
 	@Override
 	public Enumeration<Location> getLegalMoves(ChessBoard board) {
-		// TODO Auto-generated method stub
+		// TODO: finish this method
 		return null;
 	}
 
