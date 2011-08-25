@@ -13,7 +13,7 @@ public class ChessBoard {
 	}
 	
 	public void setPiece(ChessPiece piece, Location location) {
-		
+		//TODO make method body
 	}
 
 }
