@@ -26,9 +26,9 @@ public class ChessGame {
 	
 	public ChessGame(ChessGameState gameState)
 	{
-		for(int row = 0;row< board.N_ROWS;row++)
+		for(int row = 0;row< board.NUMBER_OF_ROWS;row++)
 		{
-			for(int col = 0; col< board.N_COLS; col++)
+			for(int col = 0; col< board.NUMBER_OF_COLUMNS; col++)
 			{
 				Location location = new Location(row,col);
 				PieceDescription pieceDescription = gameState.getPieceDescription(location);
@@ -65,6 +65,8 @@ public class ChessGame {
 		return null;
 		
 		//TODO: 
+		
+		return null;
 	}
 	
 	public void makeMove(MoveDescription movedesc)

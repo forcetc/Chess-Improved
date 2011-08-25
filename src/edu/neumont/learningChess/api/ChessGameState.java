@@ -35,11 +35,11 @@ public class ChessGameState {
 		this.teamColor = teamColor;
 	}
 
-	public MoveDescription getMoveDescription() {
+	public MoveDescription getMostRecentMoveDescription() {
 		return moveDescription;
 	}
 
-	public void setMoveDescription(MoveDescription moveDescription) {
+	public void setMostRecentMoveDescription(MoveDescription moveDescription) {
 		this.moveDescription = moveDescription;
 	}
 
