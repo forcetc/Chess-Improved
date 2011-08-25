@@ -1,8 +1,5 @@
 package edu.neumont.learningChess.model;
 
-import edu.neumont.learningChess.api.PieceType;
-import edu.neumont.learningChess.api.TeamColor;
-
 import java.util.List;
 
 import edu.neumont.learningChess.api.PieceType;
