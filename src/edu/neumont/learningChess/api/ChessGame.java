@@ -1,6 +1,17 @@
 package edu.neumont.learningChess.api;
 
+import java.util.Enumeration;
+import edu.neumont.learningChess.model.ChessBoard;
+import edu.neumont.learningChess.model.ChessPiece;
+import edu.neumont.learningChess.model.ChessTeam;
+import edu.neumont.learningChess.api.Location;
+
 public class ChessGame {
+	
+	private ChessBoard board = new ChessBoard();
+	private ChessTeam lightTeam = new ChessTeam();
+	private ChessTeam darkTeam = new ChessTeam();
+
 
 	
 	public ChessGame()
@@ -9,14 +20,31 @@ public class ChessGame {
 		
 	}
 	
-	public void ChessGame(GameState gs)
+	public void ChessGame(ChessGameState gameState)
 	{
+		for(int row = 0;row< board.N_ROWS;row++)
+		{
+			for(int col = 0; col< board.N_COLS; col++)
+			{
+				Location location = new Location(row,col);
+				PieceDescription pieceDescription = gameState.getPieceDescription(location);
+				
+				ChessPiece piece = (pieceDescription.getColor() == TeamColor.LIGHT)? 
+						lightTeam.getUnusedPiece(pieceDescription.getPieceType()) 
+						: darkTeam.getUnusedPiece(pieceDescription.getPieceType());
+				
+			}
+			
+		}
+			
+		
 		//TODO: 
 		
 	}
 	
-	public GameState getGameState()
+	public ChessGameState getGameState()
 	{
+		
 		
 		//TODO: 
 		return null;
@@ -73,6 +101,7 @@ public class ChessGame {
 	
 	public Enumeration<Move> getGameHistory()
 	{
+		return null;
 		//TODO: 
 	}
 	
