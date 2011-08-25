@@ -1,5 +1,15 @@
 package edu.neumont.learningChess.model;
 
-public class Bishop {
+import java.util.Enumeration;
+
+import edu.neumont.learningChess.api.Location;
+
+public class Bishop extends ChessPiece{
+
+	@Override
+	public Enumeration<Location> getLegalMoves(ChessBoard board) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
