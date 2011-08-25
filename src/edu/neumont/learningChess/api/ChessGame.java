@@ -20,7 +20,7 @@ public class ChessGame {
 		
 	}
 	
-	public void ChessGame(ChessGameState gameState)
+	public ChessGame(ChessGameState gameState)
 	{
 		for(int row = 0;row< board.N_ROWS;row++)
 		{
@@ -32,6 +32,9 @@ public class ChessGame {
 				ChessPiece piece = (pieceDescription.getColor() == TeamColor.LIGHT)? 
 						lightTeam.getUnusedPiece(pieceDescription.getPieceType()) 
 						: darkTeam.getUnusedPiece(pieceDescription.getPieceType());
+						
+						board.setPiece(piece, location);
+						piece.
 				
 			}
 			
@@ -52,6 +55,7 @@ public class ChessGame {
 	
 	public MoveDescription getMoveDescription(Move move)
 	{
+		return null;
 		
 		//TODO: 
 	}
