@@ -1,6 +1,7 @@
 package edu.neumont.learningChess.api;
 
 import edu.neumont.learningChess.model.ChessBoard;
+import edu.neumont.learningChess.model.ChessPiece;
 
 public class ChessGameState {
 
@@ -13,13 +14,17 @@ public class ChessGameState {
 	}
 
 	public PieceDescription getPieceDescription(Location location) {
-		PieceDescription description = new PieceDescription(null, false, null);
-		description;
-		return null;
+		ChessPiece piece = chessBoard.getPiece(location);
+		// TODO: figure out the piece color
+		TeamColor pieceColor = null;
+		boolean pieceHasMoved = piece.hasMoved();
+		PieceType pieceType = piece.getType();
+		PieceDescription description = new PieceDescription(pieceColor, pieceHasMoved, pieceType);
+		return description;
 	}
 
 	public void setPieceDescription(Location location, PieceDescription pieceDescription) {
-
+		
 	}
 
 	public TeamColor getMovingTeamColor() {
