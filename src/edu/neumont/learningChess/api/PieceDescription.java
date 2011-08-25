@@ -10,6 +10,7 @@ public class PieceDescription {
 		this.teamColor = teamColor;
 		this.hasMoved = hasMoved;
 		this.pieceType = pieceType;
+
 	}
 	
 	public TeamColor getColor() {
