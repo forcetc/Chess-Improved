@@ -9,14 +9,18 @@ import edu.neumont.learningChess.model.MoveHistory;
 
 public class ChessGame {
 	
-	private ChessBoard board = new ChessBoard();
-	private ChessTeam lightTeam = new ChessTeam();
-	private ChessTeam darkTeam = new ChessTeam();
-	private MoveHistory moveHistory = new MoveHistory();
+	private ChessBoard board;
+	private ChessTeam lightTeam;
+	private ChessTeam darkTeam;
+	private MoveHistory moveHistory;
 
 	
 	public ChessGame()
 	{
+		board = new ChessBoard();
+		lightTeam = new ChessTeam();
+		darkTeam = new ChessTeam();
+		moveHistory = new MoveHistory();
 		// TODO: finish this method
 		
 	}
@@ -103,6 +107,34 @@ public class ChessGame {
 	{
 		// TODO: finish this method
 		return null;
+	}
+
+	/**
+	 * @return the lightTeam
+	 */
+	public ChessTeam getLightTeam() {
+		return lightTeam;
+	}
+
+	/**
+	 * @param lightTeam the lightTeam to set
+	 */
+	public void setLightTeam(ChessTeam lightTeam) {
+		this.lightTeam = lightTeam;
+	}
+
+	/**
+	 * @return the darkTeam
+	 */
+	public ChessTeam getDarkTeam() {
+		return darkTeam;
+	}
+
+	/**
+	 * @param darkTeam the darkTeam to set
+	 */
+	public void setDarkTeam(ChessTeam darkTeam) {
+		this.darkTeam = darkTeam;
 	}
 	
 }
