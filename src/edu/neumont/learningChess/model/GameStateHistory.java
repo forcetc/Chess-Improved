@@ -1,5 +1,9 @@
 package edu.neumont.learningChess.model;
 
-public class GameStateHistory {
+import java.util.Stack;
+
+import edu.neumont.learningChess.api.ChessGameState;
+
+public class GameStateHistory extends Stack<ChessGameState>{
 
 }
