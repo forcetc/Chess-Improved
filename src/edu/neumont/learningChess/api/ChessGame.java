@@ -58,9 +58,7 @@ public class ChessGame {
 	}
 	
 	public MoveDescription getMoveDescription(Move move)
-	{
-		return null;
-		
+	{		
 		//TODO: 
 		
 		return null;
