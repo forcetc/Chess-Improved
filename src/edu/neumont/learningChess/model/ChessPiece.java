@@ -1,18 +1,20 @@
 package edu.neumont.learningChess.model;
 
+import java.util.*;
+
+import edu.neumont.learningChess.api.Location;
+import edu.neumont.learningChess.api.Move;
+
 public abstract class ChessPiece {
 
-		protected Team team;
+		protected ChessTeam team;
 		protected boolean hasMoved = false;
-		protected int worth;
+		protected 
 
-		public ChessPiece(Team team, int worth) {
-			this.team = team;
-			this.worth = worth;
+		public ChessPiece() {
+
 		}	
-		public Location getLocation(ChessBoard board) {
-			return board.getPieceLocation(this);
-		}
+		
 
 		public boolean hasMoved() {
 			return hasMoved;
@@ -22,11 +24,9 @@ public abstract class ChessPiece {
 			this.hasMoved = hasMoved;
 		}
 
-		public String getName() {
-			return null;
-		}
+	
 
-		public Team getTeam() {
+		public ChessTeam getTeam() {
 			return team;
 		}
 
@@ -50,9 +50,12 @@ public abstract class ChessPiece {
 			}
 			return isValid;
 		}
-
-		public int getValue() {
-			return worth;
+		
+		
+		
+		//Class simple name
+		public String getName() {
+			return this.getClass().getSimpleName();
 		}
 	}
 
