@@ -1,9 +1,13 @@
 package edu.neumont.learningChess.api;
 
 import java.util.Enumeration;
+
+import org.ietf.jgss.GSSContext;
+
 import edu.neumont.learningChess.model.ChessBoard;
 import edu.neumont.learningChess.model.ChessPiece;
 import edu.neumont.learningChess.model.ChessTeam;
+import edu.neumont.learningChess.model.MoveHistory;
 import edu.neumont.learningChess.api.Location;
 
 public class ChessGame {
@@ -11,7 +15,7 @@ public class ChessGame {
 	private ChessBoard board = new ChessBoard();
 	private ChessTeam lightTeam = new ChessTeam();
 	private ChessTeam darkTeam = new ChessTeam();
-
+	private MoveHistory moveHistory = new MoveHistory();
 
 	
 	public ChessGame()
@@ -28,14 +32,17 @@ public class ChessGame {
 			{
 				Location location = new Location(row,col);
 				PieceDescription pieceDescription = gameState.getPieceDescription(location);
+				TeamColor currentTeamColor;
 				
 				ChessPiece piece = (pieceDescription.getColor() == TeamColor.LIGHT)? 
 						lightTeam.getUnusedPiece(pieceDescription.getPieceType()) 
 						: darkTeam.getUnusedPiece(pieceDescription.getPieceType());
 						
 						board.setPiece(piece, location);
-						piece.
-				
+						piece.setHasMoved(true);
+						
+						currentTeamColor = gameState.getMovingTeamColor();
+						moveHistory.
 			}
 			
 		}
