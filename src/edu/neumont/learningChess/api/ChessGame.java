@@ -2,6 +2,8 @@ package edu.neumont.learningChess.api;
 
 import java.util.Enumeration;
 
+import org.ietf.jgss.GSSContext;
+
 import edu.neumont.learningChess.model.ChessBoard;
 import edu.neumont.learningChess.model.ChessPiece;
 import edu.neumont.learningChess.model.ChessTeam;
@@ -53,7 +55,9 @@ public class ChessGame {
 	
 	public ChessGameState getGameState()
 	{
-		// TODO: finish this method
+		
+		
+		//TODO: 
 		return null;
 	}
 	
