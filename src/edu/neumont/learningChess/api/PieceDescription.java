@@ -2,16 +2,18 @@ package edu.neumont.learningChess.api;
 
 public class PieceDescription {
 	
-	private TeamColor color;
-	private boolean hasMoved;
-	private PieceType pieceType;
+	private final TeamColor teamColor;
+	private final boolean hasMoved;
+	private final PieceType pieceType;
 
-	public PieceDescription() {
-		// TODO Auto-generated constructor stub
+	public PieceDescription(TeamColor teamColor, boolean hasMoved, PieceType pieceType) {
+		this.teamColor = teamColor;
+		this.hasMoved = hasMoved;
+		this.pieceType = pieceType;
 	}
 	
 	public TeamColor getColor() {
-		return color;
+		return teamColor;
 	}
 
 	public boolean isHasMoved() {
