@@ -183,36 +183,6 @@ public class ChessGame {
         return false;
     }
 
-    private boolean piecesInPath(Move move) {
-    	boolean piecesPresent = false;
-    	
-    	int vertical = move.verticalDistance();
-    	int horizontal = move.horizontalDistance();
-		int verticalStep = vertical / Math.abs(vertical);
-		int horizontalStep = horizontal / Math.abs(horizontal);
-    	
-    	if (vertical == 0) {
-    		for (int col = move.getFrom().getColumn() + horizontalStep; col < move.getTo().getColumn() - horizontalStep; col += horizontalStep) {
-    			Location location = new Location(move.getFrom().getRow(), col);
-    			piecesPresent = (board.getPiece(location) != null);
-    		}
-    	} else if (horizontal == 0) {
-    		for (int row = move.getFrom().getRow() + verticalStep; row < move.getTo().getRow() - verticalStep; row += verticalStep) {
-    			Location location = new Location(row, move.getFrom().getColumn());
-    			piecesPresent = (board.getPiece(location) != null);
-    		}
-    	} else if (Math.abs(vertical) == Math.abs(horizontal)){
-    		for (int row = move.getFrom().getRow() + verticalStep; row < move.getTo().getRow() - verticalStep; row += verticalStep) {
-        		for (int col = move.getFrom().getColumn() + horizontalStep; col < move.getTo().getColumn() - horizontalStep; col += horizontalStep) {
-        			Location location = new Location(row, col);
-        			piecesPresent = (board.getPiece(location) != null);
-        		}
-    		}
-    	}
-    	
-        return piecesPresent;
-    }
-
     private Location getCastleRookLocation(Move move) {
 
         return null;
