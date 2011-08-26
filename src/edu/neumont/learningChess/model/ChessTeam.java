@@ -2,14 +2,16 @@ package edu.neumont.learningChess.model;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
+import edu.neumont.learningChess.api.Move;
 import edu.neumont.learningChess.api.PieceType;
 import edu.neumont.learningChess.api.TeamColor;
 
 public class ChessTeam {
 	TeamColor color;
-	ArrayList<ChessPiece> unusedChessPieces;
-	ArrayList<ChessPiece> usedChessPieces;
+	List<ChessPiece> unusedChessPieces;
+	List<ChessPiece> usedChessPieces;
 
 	public ChessPiece getUnusedPiece(PieceType type) {
 		ChessPiece piece = null;
@@ -51,7 +53,12 @@ public class ChessTeam {
 		return piece!=null;
 	}
 
-	public Iterator<?> getPocibleMoves() {
+	public Iterator<Move> getPocibleMoves() 
+	{
+		List<Move> AllPocibleMoves = new ArrayList<Move>();
+		for (ChessPiece piece : usedChessPieces) {
+			AllPocibleMoves.addAll(piece.getPocibleMoves());
+		}
 		return null;
 	}
 }
