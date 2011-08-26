@@ -32,13 +32,19 @@ public class MoveDescription {
 	}
 	public void setCapturedPiece(PieceDescription description)
 	{
-		if (currentMovetype != MoveType.NORMAL) {
-			throw new RuntimeException("Can't change Non-Normal MoveType. Currently set to: " + currentMovetype.toString() + ". Trying to set to " + MoveType.CAPTURE.toString());
-		}
-		else
+		if (currentMovetype == MoveType.NORMAL)
 		{
 			capturedPiece = description.getPieceType();
 			currentMovetype = MoveType.CAPTURE;
+		}
+		else if (currentMovetype == MoveType.PROMOTION)
+		{
+			capturedPiece = description.getPieceType();
+			currentMovetype = MoveType.PROMOTION_WITH_CAPTURE;
+		}
+		else
+		{
+			throw new RuntimeException("Can't change Non-Normal MoveType. Currently set to: " + currentMovetype.toString() + ". Trying to set to " + MoveType.CAPTURE.toString());
 		}
 	}
 	
