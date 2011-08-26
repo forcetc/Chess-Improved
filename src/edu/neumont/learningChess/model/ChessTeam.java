@@ -57,7 +57,7 @@ public class ChessTeam {
 	{
 		List<Move> allPossibleMoves = new ArrayList<Move>();
 		for (ChessPiece piece : usedChessPieces) {
-			allPocibleMoves.addAll(piece.getPossibleMoves());
+			allPossibleMoves.addAll(piece.getPossibleMoves());
 		}
 		return allPossibleMoves.iterator();
 	}
