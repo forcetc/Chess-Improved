@@ -36,7 +36,7 @@ public abstract class ChessPiece {
 
 		public boolean canAttack(ChessBoard board, Location target) {
 			boolean attacks = false;
-			for (Enumeration<Location> e = getLegalMoves(board); !attacks && e.hasMoreElements(); ) {
+			for (Enumeration<Location> e = getLegalMoves(board, target); !attacks && e.hasMoreElements(); ) {
 				Location location = e.nextElement();
 				attacks = target.equals(location);
 			}
@@ -46,7 +46,7 @@ public abstract class ChessPiece {
 		public boolean isLegalMove(ChessBoard board, Move move) {
 			boolean isValid = false;
 
-			for (Enumeration<Location> e = getLegalMoves(board); !isValid && e.hasMoreElements(); ) {
+			for (Enumeration<Location> e = getLegalMoves(board, move.getFrom()); !isValid && e.hasMoreElements(); ) {
 				Location there = e.nextElement();
 				isValid = there.equals(move.getTo());
 			}
@@ -54,7 +54,7 @@ public abstract class ChessPiece {
 		}
 		
 		
-		public abstract Enumeration<Location> getLegalMoves(ChessBoard board);
+		public abstract Enumeration<Location> getLegalMoves(ChessBoard board, Location loc);
 
 		//Class simple name
 		public String getName() {
