@@ -1,5 +1,8 @@
 package edu.neumont.learningChess.api;
 
+import java.util.ArrayList;
+import java.util.Enumeration;
+
 
 public class Move {
 
@@ -30,4 +33,43 @@ public class Move {
 	public String toString() {
 		return from.toString() + " " + to.toString();
 	}
+	
+	public Enumeration<Location> getMoveLocation()
+	{
+		
+//		Enumeration<Location> locationsToReturn = new ArrayList<Location>();
+//		if (isVertical()) {
+//			for (int i = from.getRow(); (i < vertical*verticalStep) || (i > vertical*verticalStep); i+=verticalStep) 
+//			{
+//				locationsToReturn.
+//			}
+//		}else if (isHorizontal()) {
+//			for (int i = from.getColumn(); (i < horizontal*horizontalStep) || (i > horizontal*horizontalStep); i+=horizontalStep) 
+//			{
+//				piecesPresent = this.getPiece(new Location(fromLocation.getRow(), i))!= null;
+//			}
+//		}else if (isDiagonal()) {
+//			for (int i = from.getRow(), j= fromLocation.getColumn(); (i < vertical*verticalStep) || (i > vertical*verticalStep); i+=verticalStep, j+=horizontalStep) 
+//			{
+//				piecesPresent = this.getPiece(new Location(i, j))!= null;
+//			}
+//		}
+		return null;
+	}
+
+	private boolean isDiagonal() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	private boolean isHorizontal() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	private boolean isVertical() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
 }
