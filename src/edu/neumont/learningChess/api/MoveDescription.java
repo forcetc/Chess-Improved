@@ -57,11 +57,9 @@ public class MoveDescription {
 		if (currentMovetype != MoveType.NORMAL) {
 			throw new RuntimeException("Can't change Non-Normal MoveType. Currently set to: " + currentMovetype.toString() + ". Trying to set to " + MoveType.CASTLE.toString());
 		}
-		else
-		{
-			castlingRookPosition = location;
-			currentMovetype = MoveType.CASTLE;
-		}
+		
+		castlingRookPosition = location;
+		currentMovetype = MoveType.CASTLE;
 	}
 	
 	public Location getEnPassantCapturedPawnLocation()
@@ -73,11 +71,8 @@ public class MoveDescription {
 		if (currentMovetype != MoveType.NORMAL) {
 			throw new RuntimeException("Can't change Non-Normal MoveType. Currently set to: " + currentMovetype.toString() + ". Trying to set to " + MoveType.ENPASSANT.toString());
 		}
-		else
-		{
-			enPassantCapturePosition = location;
-			currentMovetype = MoveType.ENPASSANT;
-		}
+		enPassantCapturePosition = location;
+		currentMovetype = MoveType.ENPASSANT;
 	}
 	
 	public PieceType getPawnPromotionType()

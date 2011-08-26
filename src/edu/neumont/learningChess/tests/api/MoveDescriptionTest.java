@@ -4,16 +4,19 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import edu.neumont.learningChess.api.Location;
+import edu.neumont.learningChess.api.Move;
+import edu.neumont.learningChess.api.MoveDescription;
+
 public class MoveDescriptionTest {
 
 	@Test
-	public void testMoveDescription() {
-		fail("Not yet implemented");
-	}
-
-	@Test
 	public void testGetMoveCoordinates() {
-		fail("Not yet implemented");
+		
+		Move move = new Move(new Location(4,4), new Location(5, 4));
+		MoveDescription toTest = new MoveDescription(move);
+		
+		assertEquals(move, toTest.getMoveCoordinates());
 	}
 
 	@Test
