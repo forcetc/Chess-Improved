@@ -14,7 +14,7 @@ public class Bishop extends ChessPiece{
 
 
 	@Override
-	public Enumeration<Location> getLegalMoves(ChessBoard board) {
+	public Enumeration<Location> getLegalMoves(ChessBoard board, Location loc) {
 		// TODO: finish this method
 		return null;
 	}

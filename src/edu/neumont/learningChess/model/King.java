@@ -11,9 +11,10 @@ public class King extends ChessPiece {
 		type = PieceType.KING;
 	}
 
+
 	@Override
-	public Enumeration<Location> getLegalMoves(ChessBoard board) {
-		// TODO: finish this method
+	public Enumeration<Location> getLegalMoves(ChessBoard board, Location loc) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
