@@ -19,7 +19,7 @@ public class Knight extends ChessPiece {
 
 		ChessPiece chessPiece = board.getPiece(location);
 
-		if (chessPiece.type == PieceType.KNIGHT) {
+		if (chessPiece.getType() == PieceType.KNIGH7T) {
 			int column = location.getColumn();
 			int row = location.getRow();
 
