@@ -1,5 +1,20 @@
 package edu.neumont.learningChess.model;
 
-public class Queen {
+import java.util.Enumeration;
+
+import edu.neumont.learningChess.api.Location;
+import edu.neumont.learningChess.api.PieceType;
+
+public class Queen extends ChessPiece {
+
+	public Queen() {
+		type = PieceType.QUEEN;
+	}
+
+	@Override
+	public Enumeration<Location> getLegalMoves(ChessBoard board) {
+		// TODO: finish this method
+		return null;
+	}
 
 }

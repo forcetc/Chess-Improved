@@ -12,7 +12,6 @@ public abstract class ChessPiece {
 		protected PieceType type;
 
 		public ChessPiece() {
-
 		}	
 		
 
@@ -27,11 +26,13 @@ public abstract class ChessPiece {
 		public PieceType getType() {
 			return type;
 		}
+
+        public boolean isPossibleMove(Move move){
+            //TODO
+            return true;
+        }
 		
 
-
-
-		public abstract Enumeration<Location> getLegalMoves(ChessBoard board);
 
 		public boolean canAttack(ChessBoard board, Location target) {
 			boolean attacks = false;
@@ -53,7 +54,8 @@ public abstract class ChessPiece {
 		}
 		
 		
-		
+		public abstract Enumeration<Location> getLegalMoves(ChessBoard board);
+
 		//Class simple name
 		public String getName() {
 			return this.getClass().getSimpleName();
