@@ -13,41 +13,43 @@ public class Knight extends ChessPiece {
 	}
 
 	@Override
-	public Enumeration<Location> getLegalMoves(ChessBoard board, Location loc) {
+	public Enumeration<Location> getLegalMoves(ChessBoard board, Location location) {
 
-		Enumeration<Location> moves;
-		//
-		
-		
-		ChessPiece cp = board.getPiece(loc);
-		
-		if (cp.type == PieceType.KNIGHT){
-		int col = loc.getColumn();
-		int row = loc.getRow();
-		
-		
-		Vector<Location> balls = new Vector<Location>();
-		Location one = new Location(row+2, col+1);
-		Location two = new Location(row+2, col-1);
-		Location three = new Location(row-2, col+1);
-		Location four = new Location(row-2, col-1);
-		Location five = new Location(row-1, col+2);
-		Location six = new Location(row-1, col-2);
-		Location seven = new Location(row+1, col+2);
-		Location eight = new Location(row+1, col-2);
-		
-		
-		
-		//off the board
-		
-		for(Location l : balls){
-			if (!board.isValidLocation(balls)){
-				balls.remove(l);
-			}
+		Vector<Location> possibleMoves = new Vector<Location>();
+
+		ChessPiece chessPiece = board.getPiece(location);
+
+		if (chessPiece.type == PieceType.KNIGHT) {
+			int column = location.getColumn();
+			int row = location.getRow();
+
+			Location one = new Location(row + 2, column + 1);
+			possibleMoves = checkLegalMoves(board.isValidLocation(one), one, possibleMoves);
+
+			Location two = new Location(row + 2, column - 1);
+			possibleMoves = checkLegalMoves(board.isValidLocation(two), two, possibleMoves);
+
+			Location three = new Location(row - 2, column + 1);
+			possibleMoves = checkLegalMoves(board.isValidLocation(three), three, possibleMoves);
+
+			Location four = new Location(row - 2, column - 1);
+			possibleMoves = checkLegalMoves(board.isValidLocation(four), four, possibleMoves);
+
+			Location five = new Location(row - 1, column + 2);
+			possibleMoves = checkLegalMoves(board.isValidLocation(five), five, possibleMoves);
+
+			Location six = new Location(row - 1, column - 2);
+			possibleMoves = checkLegalMoves(board.isValidLocation(six), six, possibleMoves);
+
+			Location seven = new Location(row + 1, column + 2);
+			possibleMoves = checkLegalMoves(board.isValidLocation(seven), seven, possibleMoves);
+
+			Location eight = new Location(row + 1, column - 2);
+			possibleMoves = checkLegalMoves(board.isValidLocation(eight), eight, possibleMoves);
+
+			return possibleMoves.elements();
+
 		}
-		
-		moves = balls.elements();
-		return moves;
-		}
+		return possibleMoves.elements();
 	}
 }

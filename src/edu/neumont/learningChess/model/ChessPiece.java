@@ -14,6 +14,16 @@ public abstract class ChessPiece {
 		public ChessPiece() {
 		}	
 		
+		
+		public Vector<Location> checkLegalMoves(boolean isValid, Location location,	Vector<Location> possibleMoves) {
+			if (isValid) {
+				possibleMoves.add(location);
+			}
+
+			return possibleMoves;
+		}
+		
+		
 
 		public boolean hasMoved() {
 			return hasMoved;
