@@ -42,6 +42,7 @@ public class Move {
 		int horizontal = horizontalDistance();
 		int verticalStep = vertical / Math.abs(vertical);
 		int horizontalStep = horizontal / Math.abs(horizontal);
+		
 		if (isVertical()) {
 			for (int i = 0; i < Math.abs(vertical); i++) {
 				locationsToReturn.add(new Location(from.getRow()
@@ -64,18 +65,17 @@ public class Move {
 	}
 
 	private boolean isDiagonal() {
-		// TODO Auto-generated method stub
-		return false;
+		return verticalDistance() == horizontalDistance();
 	}
 
 	private boolean isHorizontal() {
 		// TODO Auto-generated method stub
-		return false;
+		return horizontalDistance()> verticalDistance();
 	}
 
 	private boolean isVertical() {
 		// TODO Auto-generated method stub
-		return false;
+		return verticalDistance()> horizontalDistance();
 	}
 
 }
