@@ -1,8 +1,5 @@
 package edu.neumont.learningChess.api;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import edu.neumont.learningChess.model.ChessBoard;
 import edu.neumont.learningChess.model.ChessPiece;
 
