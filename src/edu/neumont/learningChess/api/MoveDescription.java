@@ -2,60 +2,98 @@ package edu.neumont.learningChess.api;
 
 public class MoveDescription {
 	
+	private Move move;
+	private MoveType currentMovetype;
+	
+	private PieceType capturedPiece;
+	private PieceType pawnPromotionType;
+	
+	private Location castlingRookPosition;
+	private Location enPassantCapturePosition;
+	
+	
 	public MoveDescription(Move move) {
-		// TODO: finish this method
+		this.move = move;
+		currentMovetype = MoveType.NORMAL;
 	}
 	
 	public Move getMoveCoordinates()
 	{
-		// TODO: finish this method
-		return null;
+		return move;
+	}
+	public MoveType getMoveType()
+	{
+		return currentMovetype;
 	}
 	
 	public PieceType getCapturedPiece()
 	{
-		// TODO: finish this method
-		return null;
+		return capturedPiece;
 	}
 	public void setCapturedPiece(PieceDescription description)
 	{
-		// TODO: finish this method
-	}
-	
-	public MoveType getMoveType()
-	{
-		// TODO: finish this method
-		return null;
+		if (currentMovetype != MoveType.NORMAL) {
+			throw new RuntimeException("Can't change Non-Normal MoveType. Currently set to: " + currentMovetype.toString() + ". Trying to set to " + MoveType.CAPTURE.toString());
+		}
+		else
+		{
+			capturedPiece = description.getPieceType();
+			currentMovetype = MoveType.CAPTURE;
+		}
 	}
 	
 	public Location getCastlingRookPosition()
 	{
-		// TODO: finish this method
-		return null;
+		return castlingRookPosition;
 	}
 	public void setCastlingRookPosition(Location location)
 	{
-		// TODO: finish this method
+		if (currentMovetype != MoveType.NORMAL) {
+			throw new RuntimeException("Can't change Non-Normal MoveType. Currently set to: " + currentMovetype.toString() + ". Trying to set to " + MoveType.CASTLE.toString());
+		}
+		else
+		{
+			castlingRookPosition = location;
+			currentMovetype = MoveType.CASTLE;
+		}
 	}
 	
 	public Location getEnPassantCapturedPawnLocation()
 	{
-		// TODO: finish this method
-		return null;
+		return enPassantCapturePosition;
 	}
 	public void setEnPassantCapturedPawnLocation(Location location)
 	{
-		// TODO: finish this method
+		if (currentMovetype != MoveType.NORMAL) {
+			throw new RuntimeException("Can't change Non-Normal MoveType. Currently set to: " + currentMovetype.toString() + ". Trying to set to " + MoveType.ENPASSANT.toString());
+		}
+		else
+		{
+			enPassantCapturePosition = location;
+			currentMovetype = MoveType.ENPASSANT;
+		}
 	}
 	
 	public PieceType getPawnPromotionType()
 	{
-		// TODO: finish this method
-		return null;
+		return pawnPromotionType;
 	}
 	public void setPawnPromotionType(PieceType pieceType)
 	{
-		// TODO: finish this method
+		if (currentMovetype == MoveType.NORMAL)
+		{
+			pawnPromotionType = pieceType;
+			currentMovetype = MoveType.PROMOTION;
+		}
+		else if (currentMovetype == MoveType.CAPTURE)
+		{
+			pawnPromotionType = pieceType;
+			currentMovetype = MoveType.PROMOTION_WITH_CAPTURE;
+		}
+		else
+		{
+			throw new RuntimeException("Can't change Non-Normal MoveType. Currently set to: " + currentMovetype.toString() + ". Trying to set to " + MoveType.PROMOTION.toString());
+		}
 	}
 
 }
