@@ -53,12 +53,12 @@ public class ChessTeam {
 		return piece!=null;
 	}
 
-	public Iterator<Move> getPocibleMoves() 
+	public Iterator<Move> getPossibleMoves() 
 	{
-		List<Move> AllPocibleMoves = new ArrayList<Move>();
+		List<Move> allPossibleMoves = new ArrayList<Move>();
 		for (ChessPiece piece : usedChessPieces) {
-			AllPocibleMoves.addAll(piece.getPocibleMoves());
+			allPossibleMoves.addAll(piece.getPossibleMoves());
 		}
-		return null;
+		return allPossibleMoves.iterator();
 	}
 }

@@ -14,6 +14,16 @@ public abstract class ChessPiece {
 		public ChessPiece() {
 		}	
 		
+		
+		public Vector<Location> checkLegalMoves(boolean isValid, Location location,	Vector<Location> possibleMoves) {
+			if (isValid) {
+				possibleMoves.add(location);
+			}
+
+			return possibleMoves;
+		}
+		
+		
 
 		public boolean hasMoved() {
 			return hasMoved;
@@ -63,6 +73,12 @@ public abstract class ChessPiece {
 
 
 		public Iterator<Move> getPocibleMoves() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+
+		public Iterator<Move> getPossibleMoves() {
 			// TODO Auto-generated method stub
 			return null;
 		}
