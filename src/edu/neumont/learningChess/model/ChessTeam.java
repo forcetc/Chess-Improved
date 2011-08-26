@@ -33,8 +33,8 @@ public class ChessTeam {
 		return piece;
 	}
 
-//    public boolean containsPiece(ChessPiece chessPiece) {
-//        //To change body of created methods use File | Settings | File Templates.
-//        return false;
-//    }
+    public boolean containsPiece(ChessPiece chessPiece) {
+        //To change body of created methods use File | Settings | File Templates.
+        return false;
+    }
 }
