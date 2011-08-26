@@ -1,8 +1,8 @@
 package edu.neumont.learningChess.api;
 
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.Iterator;
+import java.util.List;
 
 public class Move {
 
@@ -36,7 +36,7 @@ public class Move {
 
 	public Iterator<Location> getMoveLocations() {
 
-		ArrayList<Location> locationsToReturn = new ArrayList<Location>();
+		List<Location> locationsToReturn = new ArrayList<Location>();
 
 		int vertical = verticalDistance();
 		int horizontal = horizontalDistance();

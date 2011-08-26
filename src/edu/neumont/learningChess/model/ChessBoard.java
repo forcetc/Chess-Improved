@@ -30,7 +30,7 @@ public class ChessBoard {
 		return piecesPresent;
 	}
 
-	public boolean isValidLocation(Location location) {
+	public static boolean isValidLocation(Location location) {
 		return (location.getRow() >= 0 && location.getRow() < ChessBoard.NUMBER_OF_ROWS)
 				&& (location.getColumn() >= 0 && location.getColumn() < ChessBoard.NUMBER_OF_COLUMNS);
 	}

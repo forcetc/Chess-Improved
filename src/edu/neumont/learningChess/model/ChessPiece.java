@@ -70,6 +70,12 @@ public abstract class ChessPiece {
 		public String getName() {
 			return this.getClass().getSimpleName();
 		}
+
+
+		public Iterator<Move> getPocibleMoves() {
+			// TODO Auto-generated method stub
+			return null;
+		}
 	}
 
 

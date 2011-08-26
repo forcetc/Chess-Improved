@@ -102,4 +102,62 @@ public class MoveDescription {
 		}
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((capturedPiece == null) ? 0 : capturedPiece.hashCode());
+		result = prime
+				* result
+				+ ((castlingRookPosition == null) ? 0 : castlingRookPosition
+						.hashCode());
+		result = prime * result
+				+ ((currentMovetype == null) ? 0 : currentMovetype.hashCode());
+		result = prime
+				* result
+				+ ((enPassantCapturePosition == null) ? 0
+						: enPassantCapturePosition.hashCode());
+		result = prime * result + ((move == null) ? 0 : move.hashCode());
+		result = prime
+				* result
+				+ ((pawnPromotionType == null) ? 0 : pawnPromotionType
+						.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		MoveDescription other = (MoveDescription) obj;
+		if (capturedPiece != other.capturedPiece)
+			return false;
+		if (castlingRookPosition == null) {
+			if (other.castlingRookPosition != null)
+				return false;
+		} else if (!castlingRookPosition.equals(other.castlingRookPosition))
+			return false;
+		if (currentMovetype != other.currentMovetype)
+			return false;
+		if (enPassantCapturePosition == null) {
+			if (other.enPassantCapturePosition != null)
+				return false;
+		} else if (!enPassantCapturePosition
+				.equals(other.enPassantCapturePosition))
+			return false;
+		if (move == null) {
+			if (other.move != null)
+				return false;
+		} else if (!move.equals(other.move))
+			return false;
+		if (pawnPromotionType != other.pawnPromotionType)
+			return false;
+		return true;
+	}
+
 }
