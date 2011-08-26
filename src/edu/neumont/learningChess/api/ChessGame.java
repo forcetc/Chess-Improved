@@ -184,7 +184,6 @@ public class ChessGame {
     }
 
 
-
     private Location getCastleRookLocation(Move move) {
 
         return null;
