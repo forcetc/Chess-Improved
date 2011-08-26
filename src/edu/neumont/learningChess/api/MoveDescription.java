@@ -53,7 +53,7 @@ public class MoveDescription {
 		// TODO: finish this method
 		return null;
 	}
-	public void setPawnPromotionType(PieceDescription description)
+	public void setPawnPromotionType(PieceType pieceType)
 	{
 		// TODO: finish this method
 	}

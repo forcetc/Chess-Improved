@@ -49,3 +49,7 @@ gen/*
 *~$*
 # backup files
 *.bak
+
+*.ipr
+*.iml
+*.iws

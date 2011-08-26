@@ -26,6 +26,11 @@ public abstract class ChessPiece {
 		public PieceType getType() {
 			return type;
 		}
+
+        public boolean isPossibleMove(Move move){
+            //TODO
+            return true;
+        }
 		
 
 
