@@ -52,7 +52,7 @@ public class ChessGame {
         MoveDescription moveDescription = new MoveDescription(move);
         ChessPiece piece = board.getPiece(move.getFrom());
 
-        if (piece != null && piece.isPossibleMove(move) && !piecesInPath(move)) {
+        if (piece != null && piece.isPossibleMove(move) && !board.piecesInPath(move)) {
             Location castleRookLocation = getCastleRookLocation(move);
             Location enPassantLocation = getEnPassantLocation(move);
 
@@ -159,19 +159,30 @@ public class ChessGame {
         unMakeMove();
         return canAttackKing;
     }
+    
+    private ChessTeam getCurrentTeam() {
+    	return (currentTeamColor == TeamColor.LIGHT)? lightTeam: darkTeam;
+    }
 
     private Location getCurrentTeamsKingLocation() {
 
-        return null;  //To change body of created methods use File | Settings | File Templates.
+        ChessPiece king = getCurrentTeam().getUsedPiece(PieceType.KING);
+        Location location = null;
+        for (int row = 0; (row < ChessBoard.NUMBER_OF_ROWS) && (location == null); row++) {
+            for (int col = 0; (col < ChessBoard.NUMBER_OF_COLUMNS) && (location == null); col++) {
+            	Location currentLocation = new Location(row, col);
+            	if (board.getPiece(currentLocation) == king) {
+            		location = currentLocation;
+            	}
+            }
+        }
+        return location;
     }
 
     private boolean isPawnPromotion(Move move) {
         return false;
     }
 
-    private boolean piecesInPath(Move move) {
-        return false;
-    }
 
     private Location getCastleRookLocation(Move move) {
 
