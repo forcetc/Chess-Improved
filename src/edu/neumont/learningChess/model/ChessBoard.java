@@ -17,7 +17,7 @@ public class ChessBoard {
 	public void setPiece(ChessPiece piece, Location location) {
 		grid[location.getRow()][location.getColumn()] = piece;
 	}
-
+ 
     public boolean piecesInPath(Move move) {
     	boolean piecesPresent = false;
     	

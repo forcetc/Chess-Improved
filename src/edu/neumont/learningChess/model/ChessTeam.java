@@ -1,17 +1,18 @@
 package edu.neumont.learningChess.model;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import edu.neumont.learningChess.api.PieceType;
 import edu.neumont.learningChess.api.TeamColor;
 
 public class ChessTeam {
 	TeamColor color;
-	List<ChessPiece> unusedChessPieces;
-	List<ChessPiece> usedChessPieces;
+	ArrayList<ChessPiece> unusedChessPieces;
+	ArrayList<ChessPiece> usedChessPieces;
 
 	public ChessPiece getUnusedPiece(PieceType type) {
 		ChessPiece piece = null;
+		
 		for (int i = 0; i < unusedChessPieces.size() && piece == null; i++) {
 			ChessPiece chessPiece = unusedChessPieces.get(i);
 			if(chessPiece.getType() == type) {
@@ -32,8 +33,8 @@ public class ChessTeam {
 		return piece;
 	}
 
-    public boolean containsPiece(ChessPiece chessPiece) {
-        //To change body of created methods use File | Settings | File Templates.
-        return false;
-    }
+//    public boolean containsPiece(ChessPiece chessPiece) {
+//        //To change body of created methods use File | Settings | File Templates.
+//        return false;
+//    }
 }
