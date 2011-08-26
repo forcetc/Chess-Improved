@@ -12,12 +12,29 @@ public class ChessGame {
 	private ChessBoard board = new ChessBoard();
 	private ChessTeam lightTeam = new ChessTeam();
 	private ChessTeam darkTeam = new ChessTeam();
+	private TeamColor currentTeamColor = TeamColor.LIGHT;
 	private MoveHistory moveHistory = new MoveHistory();
+	private IPromotionListener promotionListener;
 
 
     public ChessGame() {
-        // TODO: finish this method
-
+    	setupTeam(lightTeam, '0', '1');
+    	setupTeam(darkTeam, '8', '7');
+    }
+    
+    private void setupTeam(ChessTeam team, char mainRow, char pawnRow) {
+    	
+    	board.setPiece(team.getUnusedPiece(PieceType.KING), new Location(mainRow, 'e'));
+    	board.setPiece(team.getUnusedPiece(PieceType.QUEEN), new Location(mainRow, 'd'));
+    	board.setPiece(team.getUnusedPiece(PieceType.BISHOP), new Location(mainRow, 'c'));
+    	board.setPiece(team.getUnusedPiece(PieceType.BISHOP), new Location(mainRow, 'f'));
+    	board.setPiece(team.getUnusedPiece(PieceType.KNIGHT), new Location(mainRow, 'b'));
+    	board.setPiece(team.getUnusedPiece(PieceType.KNIGHT), new Location(mainRow, 'g'));
+    	board.setPiece(team.getUnusedPiece(PieceType.ROOK), new Location(mainRow, 'a'));
+    	board.setPiece(team.getUnusedPiece(PieceType.ROOK), new Location(mainRow, 'h'));
+		for (int i = 0; i < ChessBoard.NUMBER_OF_COLUMNS; i++) {
+	    	board.setPiece(team.getUnusedPiece(PieceType.PAWN), new Location(pawnRow, 'a'+i));
+		}
     }
 
     public ChessGame(ChessGameState gameState) {
@@ -25,22 +42,17 @@ public class ChessGame {
             for (int col = 0; col < ChessBoard.NUMBER_OF_COLUMNS; col++) {
                 Location location = new Location(row, col);
                 PieceDescription pieceDescription = gameState.getPieceDescription(location);
-                TeamColor currentTeamColor;
 
                 ChessPiece piece = (pieceDescription.getColor() == TeamColor.LIGHT) ?
                         lightTeam.getUnusedPiece(pieceDescription.getPieceType())
                         : darkTeam.getUnusedPiece(pieceDescription.getPieceType());
 
                 board.setPiece(piece, location);
-                piece.setHasMoved(true);
-
-                currentTeamColor = gameState.getMovingTeamColor();
-                moveHistory.push(gameState.getMostRecentMoveDescription());
+                piece.setHasMoved(pieceDescription.hasMoved());
             }
-
         }
-        // TODO: finish this method
-
+        currentTeamColor = gameState.getMovingTeamColor();
+        moveHistory.push(gameState.getMostRecentMoveDescription());
     }
 
     public ChessGameState getGameState() {
