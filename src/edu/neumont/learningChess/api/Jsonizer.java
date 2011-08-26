@@ -7,8 +7,8 @@ public class Jsonizer {
 	
 	static Gson gson = new Gson();
 	
-	public static String toJson(ChessGame game){
-		String result = gson.toJson(game);		
+	public static String toJson(ChessGameState gameState){
+		String result = gson.toJson(gameState);		
 		return result;
 	}
 	
