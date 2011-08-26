@@ -19,7 +19,7 @@ public class Knight extends ChessPiece {
 
 		ChessPiece chessPiece = board.getPiece(location);
 
-		if (chessPiece.getType() == PieceType.KNIGH7T) {
+		if (chessPiece.getType() == PieceType.KNIGHT) {
 			int column = location.getColumn();
 			int row = location.getRow();
 
@@ -47,7 +47,7 @@ public class Knight extends ChessPiece {
 			Location eight = new Location(row + 1, column - 2);
 			possibleMoves = checkLegalMoves(board.isValidLocation(eight), eight, possibleMoves);
 
-			return possibleMoves.elements();
+		
 
 		}
 		return possibleMoves.elements();
