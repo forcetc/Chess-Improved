@@ -11,17 +11,17 @@ import edu.neumont.learningChess.api.TeamColor;
 public class JsonizerTest {
 	
 	@Test
-	public void testToJson() {
+	public void testJsonizer() {
 		ChessGameState gameState = new ChessGameState();
 		gameState.setMovingTeamColor(TeamColor.LIGHT);
-		String initialJsonResult = Jsonizer.toJson(gameState);
-		ChessGameState fromJsonState = Jsonizer.fromJson(initialJsonResult);
-		String secondJsonResult = Jsonizer.toJson(fromJsonState);
+		String initialJsonResult = Jsonizer.jsonize(gameState);
+		ChessGameState fromJsonState = Jsonizer.deJsonize(initialJsonResult);
+		String secondJsonResult = Jsonizer.jsonize(fromJsonState);
 		assertEquals(gameState,fromJsonState);
 	}
 
 	@Test
-	public void testFromJson() {
+	public void testDeJsonizer() {
 		fail();
 	}
 }

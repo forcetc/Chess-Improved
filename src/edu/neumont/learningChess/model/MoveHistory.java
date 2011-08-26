@@ -1,36 +1,24 @@
 package edu.neumont.learningChess.model;
 
-import java.util.Enumeration;
 import java.util.Stack;
 
 import edu.neumont.learningChess.api.MoveDescription;
+import edu.neumont.learningChess.api.MoveType;
 
-public class MoveHistory implements Enumeration<MoveDescription>{
+public class MoveHistory{
 	
-	private boolean lastMovePawnMovedTwo;
 	private Stack<MoveDescription> moves;
 	
 	public boolean isLastMovePawnMovedTwo() {
-		return lastMovePawnMovedTwo;
-	}
-
-	public void setLastMovePawnMovedTwo(boolean lastMovePawnMovedTwo) {
-		this.lastMovePawnMovedTwo = lastMovePawnMovedTwo;
+		MoveDescription lastMove = moves.peek();
+		return lastMove.getMoveType() == MoveType.PAWN_MOVE_TWO;
 	}
 
 	public void push(MoveDescription moveDescription){
-		
+		moves.push(moveDescription);
 	}
-
-	@Override
-	public boolean hasMoreElements() {
-		return !moves.isEmpty();
-	}
-
-	@Override
-	public MoveDescription nextElement() {
-		MoveDescription moveDescription = moves.pop();
-		
-		return moveDescription;
+	
+	public MoveDescription pop() {
+		return moves.pop();
 	}
 }

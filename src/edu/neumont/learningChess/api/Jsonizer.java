@@ -7,12 +7,12 @@ public class Jsonizer {
 	
 	static Gson gson = new Gson();
 	
-	public static String toJson(ChessGameState gameState){
-		String result = gson.toJson(gameState);		
-		return result;
+	public static String jsonize(ChessGameState gameState){
+		String jsonizedGameStateString = gson.toJson(gameState);		
+		return jsonizedGameStateString;
 	}
 	
-	public static ChessGameState fromJson(String jsonString) {
+	public static ChessGameState deJsonize(String jsonString) {
 		ChessGameState gameState = gson.fromJson(jsonString, ChessGameState.class);
 		return gameState;
 	}
