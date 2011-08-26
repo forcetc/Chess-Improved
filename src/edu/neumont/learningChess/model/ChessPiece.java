@@ -72,12 +72,6 @@ public abstract class ChessPiece {
 		}
 
 
-		public Iterator<Move> getPocibleMoves() {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-
 		public Iterator<Move> getPossibleMoves() {
 			// TODO Auto-generated method stub
 			return null;
