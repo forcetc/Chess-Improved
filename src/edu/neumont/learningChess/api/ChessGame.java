@@ -22,21 +22,6 @@ public class ChessGame {
     	setupTeam(darkTeam, '8', '7');
     }
     
-    private void setupTeam(ChessTeam team, char mainRow, char pawnRow) {
-    	
-    	board.setPiece(team.getUnusedPiece(PieceType.KING), new Location(mainRow, 'e'));
-    	board.setPiece(team.getUnusedPiece(PieceType.QUEEN), new Location(mainRow, 'd'));
-    	board.setPiece(team.getUnusedPiece(PieceType.BISHOP), new Location(mainRow, 'c'));
-    	board.setPiece(team.getUnusedPiece(PieceType.BISHOP), new Location(mainRow, 'f'));
-    	board.setPiece(team.getUnusedPiece(PieceType.KNIGHT), new Location(mainRow, 'b'));
-    	board.setPiece(team.getUnusedPiece(PieceType.KNIGHT), new Location(mainRow, 'g'));
-    	board.setPiece(team.getUnusedPiece(PieceType.ROOK), new Location(mainRow, 'a'));
-    	board.setPiece(team.getUnusedPiece(PieceType.ROOK), new Location(mainRow, 'h'));
-		for (int i = 0; i < ChessBoard.NUMBER_OF_COLUMNS; i++) {
-	    	board.setPiece(team.getUnusedPiece(PieceType.PAWN), new Location(pawnRow, 'a'+i));
-		}
-    }
-
     public ChessGame(ChessGameState gameState) {
         for (int row = 0; row < ChessBoard.NUMBER_OF_ROWS; row++) {
             for (int col = 0; col < ChessBoard.NUMBER_OF_COLUMNS; col++) {
@@ -135,6 +120,21 @@ public class ChessGame {
 
     public void setPromotionListener(IPromotionListener promotionListener) {
         this.promotionListener = promotionListener;
+    }
+
+    private void setupTeam(ChessTeam team, char mainRow, char pawnRow) {
+    	
+    	board.setPiece(team.getUnusedPiece(PieceType.KING), new Location(mainRow, 'e'));
+    	board.setPiece(team.getUnusedPiece(PieceType.QUEEN), new Location(mainRow, 'd'));
+    	board.setPiece(team.getUnusedPiece(PieceType.BISHOP), new Location(mainRow, 'c'));
+    	board.setPiece(team.getUnusedPiece(PieceType.BISHOP), new Location(mainRow, 'f'));
+    	board.setPiece(team.getUnusedPiece(PieceType.KNIGHT), new Location(mainRow, 'b'));
+    	board.setPiece(team.getUnusedPiece(PieceType.KNIGHT), new Location(mainRow, 'g'));
+    	board.setPiece(team.getUnusedPiece(PieceType.ROOK), new Location(mainRow, 'a'));
+    	board.setPiece(team.getUnusedPiece(PieceType.ROOK), new Location(mainRow, 'h'));
+		for (int i = 0; i < ChessBoard.NUMBER_OF_COLUMNS; i++) {
+	    	board.setPiece(team.getUnusedPiece(PieceType.PAWN), new Location(pawnRow, 'a'+i));
+		}
     }
 
     private PieceDescription getPieceDescription(Location location) {
