@@ -64,17 +64,15 @@ public class Move {
 		return locationsToReturn.iterator();
 	}
 
-	private boolean isDiagonal() {
+	public boolean isDiagonal() {
 		return verticalDistance() == horizontalDistance();
 	}
 
-	private boolean isHorizontal() {
-		// TODO Auto-generated method stub
+	public boolean isHorizontal() {
 		return horizontalDistance()> verticalDistance();
 	}
 
-	private boolean isVertical() {
-		// TODO Auto-generated method stub
+	public boolean isVertical() {
 		return verticalDistance()> horizontalDistance();
 	}
 
