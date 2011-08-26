@@ -19,6 +19,14 @@ public class Move {
 		return to;
 	}
 	
+	public int verticalDistance() {
+		return from.getRow() - to.getRow();
+	}
+	
+	public int horizontalDistance() {
+		return from.getColumn() - to.getColumn();
+	}
+	
 	public String toString() {
 		return from.toString() + " " + to.toString();
 	}
