@@ -159,10 +159,24 @@ public class ChessGame {
         unMakeMove();
         return canAttackKing;
     }
+    
+    private ChessTeam getCurrentTeam() {
+    	return (currentTeamColor == TeamColor.LIGHT)? lightTeam: darkTeam;
+    }
 
     private Location getCurrentTeamsKingLocation() {
 
-        return null;  //To change body of created methods use File | Settings | File Templates.
+        ChessPiece king = getCurrentTeam().getUsedPiece(PieceType.KING);
+        Location location = null;
+        for (int row = 0; (row < ChessBoard.NUMBER_OF_ROWS) && (location == null); row++) {
+            for (int col = 0; (col < ChessBoard.NUMBER_OF_COLUMNS) && (location == null); col++) {
+            	Location currentLocation = new Location(row, col);
+            	if (board.getPiece(currentLocation) == king) {
+            		location = currentLocation;
+            	}
+            }
+        }
+        return location;
     }
 
     private boolean isPawnPromotion(Move move) {
@@ -170,7 +184,23 @@ public class ChessGame {
     }
 
     private boolean piecesInPath(Move move) {
-        return false;
+    	boolean piecesPresent = false;
+    	
+    	int vertical = move.verticalDistance();
+    	int horizontal = move.horizontalDistance();
+    	
+    	if ((vertical == 0) || (horizontal == 0) || (Math.abs(vertical) == Math.abs(horizontal))) {
+    		int verticalStep = vertical / Math.abs(vertical);
+    		int horizontalStep = horizontal / Math.abs(horizontal);
+    		for (int row = move.getFrom().getRow() + verticalStep; row < move.getTo().getRow() - verticalStep; row += verticalStep) {
+        		for (int col = move.getFrom().getColumn() + horizontalStep; col < move.getTo().getColumn() - horizontalStep; col += horizontalStep) {
+        			Location location = new Location(row, col);
+        			piecesPresent = (board.getPiece(location) != null);
+        		}
+    		}
+    	}
+    	
+        return piecesPresent;
     }
 
     private Location getCastleRookLocation(Move move) {
