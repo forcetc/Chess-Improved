@@ -18,7 +18,7 @@ public class ChessBoard {
 		grid[location.getRow()][location.getColumn()] = piece;
 	}
 
-    private boolean piecesInPath(Move move) {
+    public boolean piecesInPath(Move move) {
     	boolean piecesPresent = false;
     	
     	int vertical = move.verticalDistance();
