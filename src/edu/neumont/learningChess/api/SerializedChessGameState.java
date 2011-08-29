@@ -1,7 +1,12 @@
 package edu.neumont.learningChess.api;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class SerializedChessGameState {
+	
+	private static final int NUMBER_ROWS = 8;
+	private static final int NUMBER_COLS = 8;
 	public static byte[] serialize(ChessGameState chessGameState) {
 		// TODO: finish this method
 		byte[] serialized = new byte[32];
@@ -11,8 +16,15 @@ public class SerializedChessGameState {
 	
 	public static ChessGameState deserialize(byte[] buffer) {
 		// TODO: finish this method
-		ChessGameState chessGameState = new ChessGameState(null, null);
-		
+		ChessGameState chessGameState = new ChessGameState();
+		NibbleBoard nibbleBoard= new NibbleBoard(buffer);
+		List<Integer> metaValues = new ArrayList<Integer>();
+		for (int row = 0; row < NUMBER_ROWS; row++) {
+			for (int col = 0; col < NUMBER_COLS; col++) {
+				int value = nibbleBoard.get(row, col);
+				
+			}
+		}
 		return chessGameState;
 	}
 	
